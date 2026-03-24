@@ -8,6 +8,6 @@ enum UserGender: string
 {
     use HasEnumValues;
 
-    case Male = 'LAKI-LAKI';
-    case Female = 'PEREMPUAN';
+    case Male = 'Laki-laki';
+    case Female = 'Perempuan';
 }

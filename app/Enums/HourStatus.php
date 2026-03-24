@@ -8,7 +8,7 @@ enum HourStatus: string
 {
     use HasEnumValues;
 
-    case Learning = 'BELAJAR';
-    case Ceremony = 'UPACARA';
-    case Break = 'ISTIRAHAT';
+    case Learn = 'Belajar';
+    case Ceremony = 'Upacara';
+    case Rest = 'Istirahat';
 }

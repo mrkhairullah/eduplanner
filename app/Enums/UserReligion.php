@@ -8,10 +8,10 @@ enum UserReligion: string
 {
     use HasEnumValues;
 
-    case Islam = 'ISLAM';
-    case Catholic = 'KATOLIK';
-    case Protestant = 'KRISTEN PROTESTAN';
-    case Buddhism = 'BUDDHA';
-    case Hinduism = 'HINDU';
-    case Confucianism = 'KHONGHUCU';
+    case Islam = 'Islam';
+    case Catholic = 'Katolik';
+    case Protestant = 'Kristen Protestan';
+    case Buddhism = 'Buddha';
+    case Hinduism = 'Hindu';
+    case Confucianism = 'Khonghucu';
 }

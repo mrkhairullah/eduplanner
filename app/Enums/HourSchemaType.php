@@ -8,6 +8,6 @@ enum HourSchemaType: string
 {
     use HasEnumValues;
 
-    case Learning = 'BELAJAR';
-    case Exam = 'UJIAN';
+    case Learn = 'Belajar';
+    case Exam = 'Ujian';
 }
