@@ -4,10 +4,11 @@ namespace App\Enums;
 
 use App\Enums\Concerns\HasEnumValues;
 
-enum HourSchemaTypeEnum: string
+enum ClassLevel: int
 {
     use HasEnumValues;
 
-    case Learning = 'BELAJAR';
-    case Exam = 'UJIAN';
+    case CL10 = 10;
+    case CL11 = 11;
+    case CL12 = 12;
 }

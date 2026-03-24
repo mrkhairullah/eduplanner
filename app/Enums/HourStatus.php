@@ -4,7 +4,7 @@ namespace App\Enums;
 
 use App\Enums\Concerns\HasEnumValues;
 
-enum HourStatusEnum: string
+enum HourStatus: string
 {
     use HasEnumValues;
 

@@ -4,7 +4,7 @@ namespace App\Enums;
 
 use App\Enums\Concerns\HasEnumValues;
 
-enum UserReligionEnum: string
+enum UserReligion: string
 {
     use HasEnumValues;
 

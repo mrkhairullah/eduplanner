@@ -4,7 +4,7 @@ namespace App\Enums;
 
 use App\Enums\Concerns\HasEnumValues;
 
-enum DayEnum: int
+enum Day: int
 {
     use HasEnumValues;
 

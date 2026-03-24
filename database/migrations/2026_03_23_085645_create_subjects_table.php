@@ -25,8 +25,8 @@ return new class extends Migration
                 ->cascadeOnUpdate()
                 ->nullOnDelete();
             $table->unsignedTinyInteger('level');
-            $table->decimal('duration_per_day', 3, 2);
-            $table->decimal('duration_per_week', 3, 2);
+            $table->decimal('duration_per_day', 4, 2);
+            $table->decimal('duration_per_week', 4, 2);
             $table->timestamps();
 
             $table->unique([

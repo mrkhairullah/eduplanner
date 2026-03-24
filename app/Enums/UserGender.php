@@ -4,11 +4,10 @@ namespace App\Enums;
 
 use App\Enums\Concerns\HasEnumValues;
 
-enum ClassFragmentEnum: int
+enum UserGender: string
 {
     use HasEnumValues;
 
-    case CF1 = 1;
-    case CF2 = 2;
-    case CF3 = 3;
+    case Male = 'LAKI-LAKI';
+    case Female = 'PEREMPUAN';
 }
