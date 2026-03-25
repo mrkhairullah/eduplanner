@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Enums\Day;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
     'hour_schema_id',
@@ -26,5 +28,15 @@ class HourSchemaDay extends Model
             'started_at' => 'datetime:H:i:s',
             'finished_at' => 'datetime:H:i:s',
         ];
+    }
+
+    public function hourSchema(): BelongsTo
+    {
+        return $this->belongsTo(HourSchema::class);
+    }
+
+    public function hours(): HasMany
+    {
+        return $this->hasMany(Hour::class);
     }
 }

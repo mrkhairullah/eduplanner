@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\Day;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 #[Fillable([
     'day',
@@ -23,5 +24,25 @@ class Schedule extends Model
     protected function casts(): array
     {
         return ['day' => Day::class];
+    }
+
+    public function hour(): BelongsTo
+    {
+        return $this->belongsTo(Hour::class);
+    }
+
+    public function subject(): BelongsTo
+    {
+        return $this->belongsTo(Subject::class);
+    }
+
+    public function room(): BelongsTo
+    {
+        return $this->belongsTo(Room::class);
+    }
+
+    public function schoolClass(): BelongsTo
+    {
+        return $this->belongsTo(SchoolClass::class);
     }
 }

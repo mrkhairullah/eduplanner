@@ -5,6 +5,8 @@ namespace App\Models;
 use App\Enums\ClassLevel;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
     'code',
@@ -29,5 +31,25 @@ class Subject extends Model
             'duration_per_day' => 'decimal:2',
             'duration_per_week' => 'decimal:2',
         ];
+    }
+
+    public function subjectName(): BelongsTo
+    {
+        return $this->belongsTo(SubjectName::class);
+    }
+
+    public function teacher(): BelongsTo
+    {
+        return $this->belongsTo(Teacher::class);
+    }
+
+    public function unpreferredHours(): HasMany
+    {
+        return $this->hasMany(SubjectUnpreferredHour::class);
+    }
+
+    public function schedules(): HasMany
+    {
+        return $this->hasMany(Schedule::class);
     }
 }

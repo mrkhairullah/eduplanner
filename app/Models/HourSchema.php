@@ -5,8 +5,11 @@ namespace App\Models;
 use App\Enums\ClassFragment;
 use App\Enums\ClassLevel;
 use App\Enums\HourSchemaType;
+use App\Models\Concerns\HasFullNameClass;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 #[Fillable([
     'type',
@@ -19,6 +22,8 @@ use Illuminate\Database\Eloquent\Model;
 ])]
 class HourSchema extends Model
 {
+    use HasFullNameClass;
+
     /**
      * The model's default values for attributes.
      */
@@ -39,5 +44,15 @@ class HourSchema extends Model
             'level' => ClassLevel::class,
             'fragment' => ClassFragment::class,
         ];
+    }
+
+    public function majorCompetency(): BelongsTo
+    {
+        return $this->belongsTo(MajorCompetency::class);
+    }
+
+    public function hourSchemaDays(): HasMany
+    {
+        return $this->hasMany(HourSchemaDay::class);
     }
 }

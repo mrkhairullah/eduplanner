@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Enums\Day;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 #[Fillable([
     'subject_id',
@@ -26,5 +27,10 @@ class SubjectUnpreferredHour extends Model
             'started_at' => 'datetime:H:i:s',
             'finished_at' => 'datetime:H:i:s',
         ];
+    }
+
+    public function subject(): BelongsTo
+    {
+        return $this->belongsTo(Subject::class);
     }
 }
